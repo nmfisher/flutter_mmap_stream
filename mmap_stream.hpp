@@ -9,12 +9,11 @@ class mmap_stream : public std::streambuf
 {
     public:
         mmap_stream(const char *begin, const char *end);
-        const char * const begin_;
-        const char * const end_;
-        const char * current_;
         ~mmap_stream() {
-          munmap((void*)begin_, end_ - begin_);
+          munmap(eback(), egptr()-eback());
         }
+        streamsize size();
+        
     private:
         int_type uflow() override;
         int_type underflow() override;
