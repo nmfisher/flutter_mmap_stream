@@ -6,3 +6,5 @@ add_library(
             ../ios/src/mmap_stream.cc 
             ../ios/src/mmap_stream_android.cc 
         )
+
+target_link_libraries(mmap_stream_android -landroid -llog)
