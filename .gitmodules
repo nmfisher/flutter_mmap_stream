@@ -1,0 +1,3 @@
+[submodule ".\\ios\\src\\"]
+	path = .\\ios\\src\\
+	url = git@github.com:nmfisher/mmap_stream.git
